@@ -3,3 +3,9 @@
 
 Вывод: единственное значение типа bool (True либо False)
 """
+res = []
+for x in [True, False]:
+    for y in [True, False]:
+        for z in [True, False]:
+            res.append((not (x or y or z)) == (not x and not y and not z))
+print(all(res))
