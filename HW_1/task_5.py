@@ -9,5 +9,14 @@
 
 4 10
 11 5
-9.22
+9.22 (8.6)
 """
+
+from math import sqrt
+
+x1 = int(input("Введите x1: "))
+y1 = int(input("Введите y1: "))
+x2 = int(input("Введите x2: "))
+y2 = int(input("Введите y2: "))
+
+print(round(sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2), 2))
