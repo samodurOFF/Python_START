@@ -15,3 +15,5 @@ True
 1
 False
 """
+number_day = int(input("Введите цифру, обозначающую день недели: "))
+print(number_day in [6, 7])
