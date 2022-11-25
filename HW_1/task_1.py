@@ -15,3 +15,12 @@ True
 1
 False
 """
+
+week_day = int(input("Введите число дня недели от 1 до 7: "))
+
+if week_day < 1 or week_day > 7:
+    print(f"{week_day} <- это значение не день недели")
+elif week_day > 5:
+    print(f"Это выходной день -> {week_day}")
+else:
+    print(f"Это рабочий день -> {week_day}")
