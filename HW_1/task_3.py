@@ -22,12 +22,12 @@
 x = int(input("Введите x: "))
 y = int(input("Введите y: "))
 if x > 0 and y > 0:
-  print('1')
+  print('1') #номер четверти
 elif x > 0 and y < 0:
-  print('4')
+  print('4') #номер четверти
 elif x < 0 and y > 0:
-  print('2')
+  print('2') #номер четверти
 elif x < 0 and y < 0:
-  print('3')
+  print('3') #номер четверти
 else: 
   print('Точка на отрицательной части оси абсцисс')
