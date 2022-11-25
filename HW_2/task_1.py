@@ -11,8 +11,3 @@
 0.56
 11
 """
-file_name = 'HW_2/indexes.txt'
-
-with open(file_name, 'w', encoding='utf-8') as file:
-
-    file.writelines()
