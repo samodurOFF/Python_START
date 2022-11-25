@@ -19,3 +19,17 @@
 0
 Точка на отрицательной части оси абсцисс
 """
+
+x = int(input("Введите x: "))
+y = int(input("Введите y: "))
+
+if x == 0 or y == 0:
+    print("Невалидное значение четверти")
+elif x > 0 and y > 0:
+    print(f"x = {x}; y = {y} -> 1")
+elif x < 0 and y > 0:
+    print(f"x = {x}; y = {y} -> 2")
+elif x < 0 and y < 0:
+    print(f"x = {x}; y = {y} -> 3")
+else:
+    print(f"x = {x}; y = {y} -> 4")
