@@ -43,4 +43,3 @@ print(f"Сумма чисел (вариант 1): {summa}")
 #     summa += number_3 % 10
 #     number_3 //= 10
 # print(f"Сумма чисел (вариант 3): {summa}")
-
