@@ -16,3 +16,9 @@
 3
 6.62
 """
+
+number = int(input("Введите натуральное число: "))
+my_list = []
+for num in range(1, number + 1):
+    my_list.append((1 + 1 / num) ** num)
+print(round(sum(my_list), 2))
