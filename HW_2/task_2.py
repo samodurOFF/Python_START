@@ -8,7 +8,6 @@
 4
 [1, 2, 6, 24]
 """
-
 from math import factorial
 
 number = int(input("Введите натуральное число: "))
