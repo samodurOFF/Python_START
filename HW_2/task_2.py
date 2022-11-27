@@ -11,7 +11,7 @@
 
 from math import factorial
 
-number = int(input("Введите вещественное число: "))
+number = int(input("Введите натуральное число: "))
 result = []
 for num in range(1, number + 1):
     result.append(factorial(num))
