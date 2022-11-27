@@ -10,14 +10,12 @@
 from random import randint
 
 number = int(input("Введите натуральное число: "))
-my_list = []
-for _ in range(number):
-    my_list.append(randint(-number, number))
+my_list = [randint(-number, number)for _ in range(number)]
+print(my_list)
 res = 1
 with open('indexes.txt', 'r') as file:
     for line in file:
         index = int(line)
         if len(my_list) > index >= -len(my_list):
             res *= my_list[index]
-
-print("ответ", res)
+print(res)
