@@ -11,7 +11,13 @@
 from math import factorial
 
 number = int(input("Введите натуральное число: "))
+
+# Вариант 1
 result = []
 for num in range(1, number + 1):
     result.append(factorial(num))
+print(result)
+
+# Вариант 2
+result = [factorial(num) for num in range(1, number + 1)]
 print(result)
