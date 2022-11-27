@@ -8,3 +8,11 @@
 4
 [1, 2, 6, 24]
 """
+
+from math import factorial
+
+number = int(input("Введите вещественное число: "))
+result = []
+for num in range(1, number + 1):
+    result.append(factorial(num))
+print(result)
