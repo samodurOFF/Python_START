@@ -11,3 +11,11 @@
 11 5
 9.22
 """
+
+Ax = int(input('Введите координату х точки A: '))
+Ay = int(input('Введите координату y точки A: '))
+Bx = int(input('Введите координату x точки B: '))
+By = int(input('Введите координату y точки B: '))
+
+point_distance = ((Ax-Bx)**2 + (Ay-By)**2)**0.5
+print(round(point_distance, 2))

@@ -15,3 +15,11 @@ True
 1
 False
 """
+
+day = int(input('Введите цифру от 1 до 7, обозначающую день недели: '))
+if day < 1 or day > 7:
+    print('Ошибка ввода. Повторите попытку')
+elif day == 6 or day == 7:
+    print('True')
+else:
+    print('False')

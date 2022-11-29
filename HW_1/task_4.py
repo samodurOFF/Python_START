@@ -10,3 +10,16 @@
 3
 x < 0, y < 0
 """
+
+quarter_num = 0
+while quarter_num < 1 or quarter_num > 4:
+    quarter_num = int(input('Введите номер четверти от 1 до 4 для определения диапазона значений: '))
+
+if quarter_num == 1:
+    print('Диапазон возможных координат точек: x > 0, y > 0')
+elif quarter_num == 2:
+    print('Диапазон возможных координат точек: x < 0, y > 0')
+elif quarter_num == 3:
+    print('Диапазон возможных координат точек: x < 0, y < 0')
+elif quarter_num == 4:
+    print('Диапазон возможных координат точек: x > 0, y < 0')
