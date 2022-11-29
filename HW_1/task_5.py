@@ -21,5 +21,5 @@ y_1 = int(input('Введите координату точки А по оси Y
 x_2 = int(input('Введите координату точки B по оси Х: '))
 y_2 = int(input('Введите координату точки B по оси Y: '))
 
-dist = round(math.sqrt((x_2 - x_1)**2 + (y_2 - y_1)**2), 2)
+dist = round(math.sqrt((x_2 - x_1) ** 2 + (y_2 - y_1) ** 2), 2)
 print(dist)
