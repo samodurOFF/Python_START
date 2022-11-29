@@ -13,3 +13,7 @@
 [2, 3, 5, 6]
 [12, 15]
 """
+my_list = [2, 3, 4, 5, 6]
+# my_list = [2, 3, 5, 6]
+
+print([my_list[i] * my_list[-1 - i] for i in range(0, len(my_list) // 2 + len(my_list) % 2)])
