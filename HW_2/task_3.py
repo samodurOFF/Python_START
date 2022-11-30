@@ -16,3 +16,6 @@
 3
 6.62
 """
+N = int(input('Введите число N: '))
+my_list = round(sum([(1 + 1 / i) ** i for i in range(1, N + 1)]), 2)
+print(my_list)

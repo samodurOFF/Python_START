@@ -11,3 +11,10 @@
 0.56
 11
 """
+
+N = float(input('Введите вещественное число: '))
+summa = 0 
+for i in str(N):
+    if i != "." and i != ",":
+        summa +=int(i)
+print(summa)
