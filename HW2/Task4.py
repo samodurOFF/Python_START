@@ -4,11 +4,10 @@
 
 import random
 
-rnd = random.Random()
 n_list = []
 n = int(input("Введите число N: "))
 for i in range(n):
-    n_list.append(rnd.randint(-n, n))
+    n_list.append(random.randint(-n, n))
 print(n_list)
 
 umn = 1
