@@ -6,16 +6,20 @@
 Ввод: значение типа <int>
 Вывод: значение типа <int>
 """
-from random import randint 
+import pathlib
+from pathlib import Path
+path = Path("indexes.txt") 
+
 
 number = int(input('Введите натуральное число: '))
-my_list = [randint(-number, number) for _ in range(number)]
+my_list = [Path(-number, number) for _ in range(number)]
 print(my_list)
 
 res = 1
-with open('indexes.txt', 'r') as file:
+
+with open("Python_START-1", "HW_2", "indexes.txt", 'r') as file:
     for line in file:
         index = int(line)
-        if len(my_list) > index >= -len(my_list):
+        if number > index >= number:
             res *= my_list[index]
 print(res)
