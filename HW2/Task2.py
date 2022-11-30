@@ -6,7 +6,7 @@ def getlist():
     total = 1
     current = 1
     while True:
-        total = total * current
+        total *= current
         yield total
         current = current + 1
 
