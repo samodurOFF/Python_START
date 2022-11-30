@@ -8,7 +8,7 @@ def getlist():
     while True:
         total *= current
         yield total
-        current = current + 1
+        current += 1
 
 f = getlist()
 print([next(f) for i in range(N)])
