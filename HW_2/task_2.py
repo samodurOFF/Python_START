@@ -8,3 +8,11 @@
 4
 [1, 2, 6, 24]
 """
+
+n = int(input('Введите N '))
+my_list = []
+f = 1
+for i in range(1, n + 1):
+    f = f * i
+    my_list.append(f)
+print(my_list)
