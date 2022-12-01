@@ -8,12 +8,11 @@
 #4
 #[1, 2, 6, 24]
 #"""
-
-def (n):
-count = 1
+n = int(input("Введите число n: "))
+my_list = []
+f = 1
 for i in range (1, n+1):
-        count*=i
-        print(count)
+        f = f * i
+        my_list.append(f)
+        print(my_list)
 
-n = int(input('Введите число N: '))
-factorial(n)
