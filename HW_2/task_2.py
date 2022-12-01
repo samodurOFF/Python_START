@@ -9,11 +9,11 @@
 #[1, 2, 6, 24]
 #"""
 
-def get_factorial_list(n):
-     fact = 1
-     facts = []
-     for i in range(1, n+1):
-         fact *= i
-         facts.append(fact)
-     return facts
-print(get_factorial_list(N))
+def (n):
+count = 1
+for i in range (1, n+1):
+        count*=i
+        print(count)
+
+n = int(input('Введите число N: '))
+factorial(n)
