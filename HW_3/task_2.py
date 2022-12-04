@@ -13,13 +13,11 @@
 [2, 3, 5, 6]
 [12, 15]
 """
-import random
-import math
+import random, math
 new_list = [random.randint(1, 9)
             for r in range(int(input('Введите размер списка: ')))]
 print(new_list)
 multi_list = []
-size = math.ceil(len(new_list)/2)
-for el in range(size):
+for el in range(math.ceil(len(new_list)/2)):
     multi_list.append(new_list[el] * new_list[-el - 1])
 print(multi_list)
