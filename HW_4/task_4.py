@@ -38,7 +38,6 @@ def sum_polynom(res_polynom, dict_polynom):
             res_polynom[key] = dict_polynom[key]
 
 
-
 if path.isdir("polynom"):  # Запись в файл
     chdir("polynom")
 else:
@@ -67,11 +66,9 @@ for key in sorted(res_polynom)[::-1]:
         str_polynom += f"{res_polynom[key]}x"
     else:
         str_polynom += f"{res_polynom[key]}"
-
 str_polynom += " = 0"
 print(f"Сумма многочленов из файлов: {str_polynom}")
 
-with open("sum_polynom.txt", 'w') as file:
+with open("sum_polynom.txt", 'w') as file:  # Запись в файл
     file.write(str_polynom)
     print("Результат записан в файл sum_polynom.txt")
-
