@@ -13,3 +13,23 @@
 [2, 3, 5, 6]
 [12, 15]
 """
+
+from random import randint
+import math
+
+
+def get_num(n, frst, last):
+    return [randint(frst, last) for i in range(n)]
+
+
+def mult_pairs(mylist):
+    return [mylist[i] * mylist[-i - 1] for i in range(math.ceil(len(mylist) / 2))]
+
+
+n = int(input('Введите число элементов списка N: '))
+frst = int(input('Введите минимальное число списка Min: '))
+last = int(input('Введите максимальное число списка Max: '))
+
+mylist = get_num(n, frst, last)
+print(mylist)
+print(mult_pairs(mylist))

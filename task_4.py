@@ -14,3 +14,12 @@
 2
 10
 """
+
+def dec_to_bin(x):
+    if x == 1:
+        return 1
+    return f"{dec_to_bin(x // 2)}{x % 2}"
+
+
+N = int(input("N:"))
+print(dec_to_bin(N))
