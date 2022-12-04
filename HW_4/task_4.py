@@ -11,3 +11,67 @@
 3x^2+2x+1=0
 9x^5+7x^4+7x^3+12x^2+8x+18=0
 """
+from os import path, chdir, listdir
+
+
+def parser(polynom):
+    polynom = polynom[:polynom.find("=")]
+    map_polynom = map(str.strip, polynom.split("+"))
+    dict_polynom = {}
+    for data in map_polynom:
+        if "x" in data:
+            if "^" in data:
+                dict_polynom[int(data[data.find("^") + 1:])] = int(data[:data.find("x")])
+            else:
+                dict_polynom[1] = int(data[:-1])
+        else:
+            dict_polynom[0] = int(data)
+    return dict_polynom
+
+
+def sum_polynom(res_polynom, dict_polynom):
+    for key in dict_polynom:
+        val = res_polynom.get(key)
+        if val:
+            res_polynom[key] += dict_polynom[key]
+        else:
+            res_polynom[key] = dict_polynom[key]
+
+
+
+if path.isdir("polynom"):  # Запись в файл
+    chdir("polynom")
+else:
+    print("Каталог с файлами отсутствует")
+    exit()
+
+res_polynom = {}
+for file_name in listdir():
+    if "polynom" in file_name:
+        with open(file_name, 'r') as file:
+            str_polynom = file.read()
+            print(f"{str_polynom} из файла {file_name}")
+            sum_polynom(res_polynom, parser(str_polynom))
+
+str_polynom = ""  # создание полинома
+plus = False
+for key in sorted(res_polynom)[::-1]:
+    if plus:
+        str_polynom += " + "
+    else:
+        plus = True
+
+    if key > 1:
+        str_polynom += f"{res_polynom[key]}x^{key}"
+    elif key == 1:
+        str_polynom += f"{res_polynom[key]}x"
+    else:
+        str_polynom += f"{res_polynom[key]}"
+
+str_polynom += " = 0"
+print(f"Сумма многочленов из файлов: {str_polynom}")
+
+with open("sum_polynom.txt", 'w') as file:
+    file.write(str_polynom)
+    print("Результат записан в файл sum_polynom.txt")
+
