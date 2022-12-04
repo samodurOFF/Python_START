@@ -12,7 +12,7 @@
 """
 
 from random import randrange
-import os.path
+from os import path, mkdir, chdir
 
 k = int(input("Введите натуральное число k "))
 polynom = [randrange(101) for i in range(k + 1)]
@@ -37,12 +37,12 @@ str_polynom += " = 0"
 
 print(str_polynom)  # Вывод в консоль
 
-if not os.path.isdir("polynom"):  # Запись в файл
-    os.mkdir("polynom")
-os.chdir("polynom")
+if not path.isdir("polynom"):  # Запись в файл
+    mkdir("polynom")
+chdir("polynom")
 i = 0
 while True:
-    if not os.path.isfile(f"polynom_{i}.txt"):
+    if not path.isfile(f"polynom_{i}.txt"):
         with open(f"polynom_{i}.txt", 'w') as file:
             file.write(str_polynom)
         print(f"Результат записан в файл polynom_{i}.txt")
