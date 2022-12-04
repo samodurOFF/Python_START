@@ -20,10 +20,12 @@ def next_prime(current):
     while True:
         current += 1
         k = 0
-        for j in range(1, current + 1):
+        for j in range(2, current + 1):
             if current % j == 0:
                 k += 1
-        if k == 2:
+                if k >= 2:
+                    break
+        if k == 1:
             return current
 
 
