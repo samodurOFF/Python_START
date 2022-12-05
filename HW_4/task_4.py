@@ -15,6 +15,8 @@ from os import path, chdir, listdir
 
 
 def parser(polynom):
+    if not polynom:
+        return {}
     polynom = polynom[:polynom.find("=")]
     map_polynom = map(str.strip, polynom.split("+"))
     dict_polynom = {}
@@ -29,46 +31,56 @@ def parser(polynom):
     return dict_polynom
 
 
-def sum_polynom(res_polynom, dict_polynom):
+def sum_polynom(poly1, poly2):
+    res_polynom = parser(poly1)
+    dict_polynom = parser(poly2)
     for key in dict_polynom:
         val = res_polynom.get(key)
         if val:
             res_polynom[key] += dict_polynom[key]
         else:
             res_polynom[key] = dict_polynom[key]
+    return create_polynom(res_polynom)
 
 
-if path.isdir("polynom"):  # Запись в файл
-    chdir("polynom")
-else:
-    print("Каталог с файлами отсутствует")
-    exit()
+def create_polynom(dict_polynom):
+    new_polynom = ""  # создание полинома
+    plus = False
+    for key in sorted(dict_polynom)[::-1]:
+        if plus:
+            new_polynom += " + "
+        else:
+            plus = True
 
-res_polynom = {}
-for file_name in listdir():
-    if "polynom" in file_name:
-        with open(file_name, 'r') as file:
-            str_polynom = file.read()
-            print(f"{str_polynom} из файла {file_name}")
-            sum_polynom(res_polynom, parser(str_polynom))
-
-str_polynom = ""  # создание полинома
-plus = False
-for key in sorted(res_polynom)[::-1]:
-    if plus:
-        str_polynom += " + "
+        if key > 1:
+            new_polynom += f"{'' if dict_polynom[key] == 1 else dict_polynom[key]}x^{key}"
+        elif key == 1:
+            new_polynom += f"{'' if dict_polynom[key] == 1 else dict_polynom[key]}x"
+        else:
+            new_polynom += f"{dict_polynom[key]}"
+    if not new_polynom:
+        new_polynom += "0 = 0"
     else:
-        plus = True
+        new_polynom += " = 0"
+    return new_polynom
 
-    if key > 1:
-        str_polynom += f"{res_polynom[key]}x^{key}"
-    elif key == 1:
-        str_polynom += f"{res_polynom[key]}x"
+
+if __name__ == '__main__':
+    if path.isdir("polynom"):  # Проверка присутствия каталога
+        chdir("polynom")
     else:
-        str_polynom += f"{res_polynom[key]}"
-str_polynom += " = 0"
-print(f"Сумма многочленов из файлов: {str_polynom}")
+        print("Каталог с файлами отсутствует")
+        exit()
 
-with open("sum_polynom.txt", 'w') as file:  # Запись в файл
-    file.write(str_polynom)
-    print("Результат записан в файл sum_polynom.txt")
+    res_polynom = ""
+    for file_name in listdir():
+        if "polynom_" in file_name:
+            with open(file_name, 'r') as file:
+                str_polynom = file.read()
+                print(f"{str_polynom} из файла {file_name}")
+                res_polynom = sum_polynom(res_polynom, str_polynom)
+    print(f"Сумма многочленов из файлов: {res_polynom}")
+
+    with open("sum_polynom.txt", 'w') as file:  # Запись в файл
+        file.write(str_polynom)
+        print("Результат записан в файл sum_polynom.txt")
