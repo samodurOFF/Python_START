@@ -10,8 +10,14 @@
 """
 
 my_list = [1, 1, 2, 3, 3, 4, 5, 5, 6, 7, 7, 8, 9, 9]
+# Вариант 1
+new_list = []
+for el in my_list:
+    if my_list.count(el) == 1:
+        new_list.append(el)
 
 
+# Вариант 2
 def del_el(x_list, el):
     while True:
         try:
@@ -26,4 +32,6 @@ while i < len(my_list):
         my_list = del_el(my_list, my_list[i])
     else:
         i += 1
+
+print(new_list)
 print(my_list)
