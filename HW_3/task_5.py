@@ -10,3 +10,11 @@ https://ru.wikipedia.org/wiki/Негафибоначчи
 8
 [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21]
 """
+
+num = int(input('Введите  натуральное число: '))
+
+my_list = [1, 0, 1]
+for i in range(num - 1):
+    my_list.append(my_list[-1] + my_list[-2])
+    my_list.insert(0, my_list[1] - my_list[0])
+print(my_list)
