@@ -9,3 +9,6 @@
 [1.1, 1.2, 3.1, 5, 10.01]
 2.0
 """
+lst = [1.1, 1.2, 3.1, 5, 10.01]
+new_lst = [round(i % 1, 2) for i in lst]
+print(lst, '=>', max(new_lst) - min(new_lst))
