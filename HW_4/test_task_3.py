@@ -1,6 +1,6 @@
 import unittest
 
-from task_3 import < 'ваша функция по созданию полиномов' > as target
+from task_3 import create_polynom as target
 
 
 # Класс с тестами

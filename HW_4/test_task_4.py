@@ -1,6 +1,6 @@
 import unittest
 
-from task_4 import < 'Ваша функция по сложению полиномов' > as target
+from task_4 import sum_poly as target
 
 
 # Класс с тестами
