@@ -11,3 +11,23 @@
 3x^2+2x+1=0
 9x^5+7x^4+7x^3+12x^2+8x+18=0
 """
+
+from sympy.abc import x
+from sympy import *
+
+
+def sum_poly(*args):
+    res = []
+    for argument in args:
+        s = argument.replace('x', ' * x').replace('x^', 'x ** ').replace(' = 0', '')
+        res.append(collect(s, x))
+    return str(sum(res)).replace('*x', 'x').replace('**', '^') + ' = 0'
+
+
+if __name__ == '__main__':
+    results = [
+        '31x^2 + 98x + 86 = 0',
+        '33x^5 + 82x^4 + 71x^3 + 73x^2 + 82x + 38 = 0'
+
+    ]
+    print(sum_poly(*results))
