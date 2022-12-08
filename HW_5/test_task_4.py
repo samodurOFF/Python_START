@@ -12,7 +12,7 @@ class TestClass(unittest.TestCase):
     def test_rle_encode(self):
         """
         Метод тестирования функции RLE шифрования.
-        Функции принимает зашифрованную строку.
+        Функция принимает строку.
         """
 
         self.assertEqual(encode(self.arg), self.expect)
