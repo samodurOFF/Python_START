@@ -20,7 +20,7 @@
 num = ''
 while not num.isdigit():
     num = input('Введите целое число N: ')
-
+    
 N = int(num)
 some_list = []
 for i in range(1, N + 1):
@@ -30,9 +30,10 @@ print(round(result, 2))
 
 
 # 2й вариант
-# n = int(input('ВВедите число N: '))
+# n = int(input('ВВедите целое число N: '))
 # some_list = round(sum([(1 + 1 / i) ** i for i in range(1, n + 1)]), 2)
 # print(some_list)
+
 
 # 3й вариант
 # num = ''
