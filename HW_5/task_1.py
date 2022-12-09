@@ -5,16 +5,22 @@
 Вывод: значение типа <str>
 """
 
-text = "бамбуковый красный баобабовый синий барбарисовый фиолетовый"
-# Хотел упростить первый вариант, получилось еще два, но проще не стало!
+
 # Вариант_1
-new_text = " ".join(list(filter(lambda x: not ("а" in x and "б" in x and "в" in x), text.split())))
-print(new_text)
+def del_word_1(text, sym):
+    return " ".join(filter(lambda x: not (sym[0] in x and sym[1] in x and sym[2] in x), text.split()))
+
 
 # Вариант_2
-new_text = " ".join(list(filter(lambda x: not all(("а" in x, "б" in x, "в" in x)), text.split())))
-print(new_text)
+def del_word_2(text, sym):
+    return " ".join(filter(lambda x: not all((sym[0] in x, sym[1] in x, sym[2] in x)), text.split()))
+
 
 # Вариант_2
-new_text = " ".join(list(filter(lambda x: not all(map(lambda y, z: z in y, ["абв"], x)), text.split())))
-print(new_text)
+def del_word_3(text, sym):
+    return " ".join(filter(lambda x: not set(x) >= set(sym), text.split()))
+
+
+if __name__ == '__main__':
+    print(del_word_2('автобус, генерал швабра итог арбуз вагон', "абв"))
+    print(del_word_2("бамбуковый красный баобабовый синий барбарисовый фиолетовый", "абв"))

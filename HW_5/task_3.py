@@ -91,15 +91,15 @@ def print_board(board, message=""):
     print(f' {board[0]} | {board[1]} | {board[2]} ')
 
 
-player = False  # False-крестик, True-нолик
-game = True
-cursor = ["\033[31m*\033[0m", 4]
-x = "\033[33mX\033[0m"
-o = "\033[32mO\033[0m"
-board = [" " for i in range(9)]
-board[cursor[1]] = cursor[0]
-print_board(board, f"Пробел - сделать ход, Enter - выход. Ходит {'нолик' if player else 'крестик'} ")
+if __name__ == '__main__':
+    player = False  # False-крестик, True-нолик
+    game = True
+    cursor = ["\033[31m*\033[0m", 4]
+    x = "\033[33mX\033[0m"
+    o = "\033[32mO\033[0m"
+    board = [" " for i in range(9)]
+    board[cursor[1]] = cursor[0]
+    print_board(board, f"Пробел - сделать ход, Enter - выход. Ходит {'нолик' if player else 'крестик'} ")
 
-# Below loop for Detcting keys runs until enter key is pressed
-with Listener(on_release=released) as detector:
-    detector.join()
+    with Listener(on_release=released) as detector:
+        detector.join()

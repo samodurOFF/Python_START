@@ -1,6 +1,6 @@
 import unittest
 
-from task_1 import < 'Ваша функция по удалению слов' > as target
+from task_1 import del_word_3 as target
 
 
 # Класс с тестами

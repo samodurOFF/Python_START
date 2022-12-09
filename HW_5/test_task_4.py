@@ -1,7 +1,7 @@
 import unittest
 
-from task_4 import < 'Ваша функция по RLE шифрованию' > as encode
-from task_4 import < 'Ваша функция по по восстановлению зашифрованной строки' > as decode
+from task_4 import my_zip as encode
+from task_4 import my_unzip as decode
 
 
 # Класс с тестами
