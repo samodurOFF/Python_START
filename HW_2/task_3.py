@@ -16,3 +16,9 @@
 3
 6.62
 """
+
+number = int(input("Введите число: "))
+spec_list = []
+for i in range(1, number + 1):
+    spec_list.append((1+1/i)**i)
+print(round(sum(spec_list), 2))
