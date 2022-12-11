@@ -37,6 +37,5 @@ def min_of_a(a):
 print(f'Вывод минимального элемента: {min_of_a(a)}')
 
 delta = max_of_a(a) - min_of_a(a)
-
 print(f'Вывод минимального элемента: {delta}')
 

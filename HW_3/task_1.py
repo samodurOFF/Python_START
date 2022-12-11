@@ -24,6 +24,7 @@ def sum_of_position(a):
         if a[i] % 2 != 0:
             sum += a[i]
     return sum
+
 print(f'Сумма элементов на нечетных позициях равна: {sum_of_position(a)}')
 
 

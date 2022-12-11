@@ -24,7 +24,6 @@ a = [randrange(0, 10) for i in range(number)]
 print(a)
 Multy = []
 size = math.ceil(number / 2)
-
 def product_of_list(a):
     for i in range(size):
             Multy = [a[i] * a[-1-i] for i in range(0,i + 1)]
