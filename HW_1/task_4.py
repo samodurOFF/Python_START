@@ -10,3 +10,15 @@
 3
 x < 0, y < 0
 """
+quarter_num = int(input('Введите номер четверти: '))
+
+if quarter_num == 1:
+    print("x > 0, y > 0")
+elif quarter_num == 2:
+    print("x < 0, y > 0")
+elif quarter_num == 3:
+    print("x < 0, y < 0")
+elif quarter_num == 4:
+    print("x > 0, y < 0")
+else:
+    print("Неверное значение четверти")
