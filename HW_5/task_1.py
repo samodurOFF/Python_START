@@ -4,3 +4,8 @@
 Ввод: значение типа <str>
 Вывод: значение типа <str>
 """
+txt = input("Введите текст через пробел:\n")
+print(f"Исходный текст: {txt}")
+search_txt = "абв"
+list = [i for i in txt.split() if search_txt not in i]
+print(f'Результат: {" ".join(list)}')
