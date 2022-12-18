@@ -7,7 +7,8 @@ from task_4 import < 'Ваша функция по по восстановлен
 # Класс с тестами
 class TestClass(unittest.TestCase):
     arg = 'ffffffffffff11111111111      aaaaa'
-    expect = '9f3f91216 5a'
+    expect = '9f3f91216 5a'  # либо это
+    # expect = '12f1116 5a' # либо это
 
     def test_rle_encode(self):
         """
