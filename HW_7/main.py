@@ -12,3 +12,6 @@ model – модуль работы с данными.
 logger – модуль логгирования.
 controller – связь между модулями.
 """
+import controller
+
+controller.start()
