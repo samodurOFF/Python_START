@@ -35,3 +35,4 @@ def input_data():
     book["birthda"] = input('Введите дату рождения: ')
     book["workplace"] = input('Введите место работы: ')
     return book
+

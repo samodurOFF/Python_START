@@ -13,3 +13,4 @@ def start():
                 model.add_data(view.input_data())
             case '3':
                 break
+

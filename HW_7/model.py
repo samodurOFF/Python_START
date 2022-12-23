@@ -37,3 +37,4 @@ def add_data(data: dict):
     with open("db.json", "w", encoding="utf-8") as file:
         json.dump(data_file, file, indent=2, ensure_ascii=False)
 
+
