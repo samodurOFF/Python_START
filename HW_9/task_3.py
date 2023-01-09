@@ -1,3 +1,5 @@
+from telegram import Update
+from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
 async def coding(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     alfavit_EU = 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ'
