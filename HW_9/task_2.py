@@ -19,7 +19,7 @@ negofibonacci.append(0)
 
 print(f' for a = {a} =>{negofibonacci+fibonacci}')
 
-await update.message.reply_text(f'for a = {a} =>{negofibonacci+fibonacci}')
+await update.message.reply_text(f'(f'for a = {a} =>{negofibonacci+fibonacci}')
 
 bot_token = ""
 app = ApplicationBuilder().token(bot_token).build()
