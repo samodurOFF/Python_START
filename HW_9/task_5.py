@@ -31,7 +31,7 @@ async def calc(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
     await update.message.reply_text(f'Результат {t}  =  {r}')
 
-bot_token = "5711017816:AAHl9-ju8GN-fckSbcycPFHJPGCi3-dPXdE"
+bot_token = ""
 app = ApplicationBuilder().token(bot_token).build()
 
 app.add_handler(CommandHandler("cal", calc))

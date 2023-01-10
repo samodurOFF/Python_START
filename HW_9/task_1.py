@@ -18,7 +18,7 @@ async def binary(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 
 
-bot_token = "5711017816:AAHl9-ju8GN-fckSbcycPFHJPGCi3-dPXdE"
+bot_token = ""
 app = ApplicationBuilder().token(bot_token).build()
 
 app.add_handler(CommandHandler("hello", hello))
