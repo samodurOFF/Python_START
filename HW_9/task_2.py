@@ -1,29 +1,22 @@
+import update as update
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
 
 async def fib(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-a = int(input('Enter the number: '))
-print(a)
-negofibonacci = [1,-1]
-fibonacci = [1]
+    input_num = update.message.text.split()
+    n = int(input('Enter the number: '))
+    fibo_nums = []
+    a, b = 0, 1
+    for i in range(n + 1):
+        fibo_nums.insert(0, a)
+        a, b = b, a - b
+    print(fibo_nums)
+    await update.message.reply_text(f'последовательность: {fibo_nums}')
 
-for i in range(2,a):
-    list = fibonacci[i-1]+fibonacci[i-2]
-    fibonacci.append(list)
-    list_nego = negofibonacci[i-2] - negofibonacci[i-1]
-    negofibonacci.append(list_nego)
-
-negofibonacci.reverse()
-negofibonacci.append(0)
-
-print(f' for a = {a} =>{negofibonacci+fibonacci}')
-
-await update.message.reply_text(f'(f'for a = {a} =>{negofibonacci+fibonacci}')
-
-bot_token = ""
+bot_token = "5711017816:AAHl9-ju8GN-fckSbcycPFHJPGCi3-dPXdE"
 app = ApplicationBuilder().token(bot_token).build()
 
-app.add_handler(CommandHandler("fib",fibonacci))
+app.add_handler(CommandHandler("fibonacci",fib))
 
 app.run_polling()

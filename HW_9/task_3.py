@@ -2,35 +2,45 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
 async def coding(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    alfavit_EU = 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    alfavit_RU = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
-    smeshenie = int(input('Шаг шифровки: '))
-    message = input("Сообщение для ДЕшифровки: ").upper()
-    itog = ''
-    lang = input('Выберите язык RU/EU: ')
-    if lang == 'RU':
-        for i in message:
-            mesto = alfavit_RU.find(i)
-            new_mesto = mesto + smeshenie
-            if i in alfavit_RU:
-                itog += alfavit_RU[new_mesto]
-            else:
-                itog += i
+    data = update.message.text
+    data = data.replace('/cod','')
+    print(data)
+    code = ""
+    previous_symbol = ""
+    count = 1
+    if not data:
+        return ""
+    for current_sumbol in data:
+        if current_sumbol !=previous_symbol:
+            if previous_symbol:
+                code += str(count) + previous_symbol
+            count = 1
+            previous_symbol = current_sumbol
     else:
-        for i in message:
-            mesto = alfavit_EU.find(i)
-            new_mesto = mesto + smeshenie
-            if i in alfavit_EU:
-                itog += alfavit_EU[new_mesto]
-            else:
-                itog += i
-    print(itog)
+        if count == 9:
+            code += str(count) + previous_symbol
+            count = 1
+        count += 1
+    code += str(count) + previous_symbol
+    await update.message.reply_text(f'ввели код {code}')
 
-    await update.message.reply_text(f' {itog}')
+    print(code)
 
-bot_token = ""
+async def REL_decoding(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    data = update.message.text
+    data = data.replace("/ans ", "")
+    print(data)
+    decode = ""
+    for i in range(0, len(data), 2):
+        count, symbol = data[i:i + 2:]
+        decode += symbol + int(count)
+    print(decode)
+    await update.message.reply_text(f'раскодировкаЖ {decode}')
+
+bot_token = "5711017816:AAHl9-ju8GN-fckSbcycPFHJPGCi3-dPXdE"
 app = ApplicationBuilder().token(bot_token).build()
 
-app.add_handler(CommandHandler("coding",REL_coding))
+app.add_handler(CommandHandler("cod", coding))
+app.run_polling()
 
-app.run_polling
+

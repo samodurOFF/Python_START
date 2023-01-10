@@ -13,12 +13,12 @@ async def binary(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         b = str(a % 2) + b
         a = a // 2
     print(b)
- await update.message.reply_text(f'в двоичной системе число:{b}')
+    await update.message.reply_text(f'в двоичной системе число:{b}')
 
 
 
 
-bot_token = ""
+bot_token = "5711017816:AAHl9-ju8GN-fckSbcycPFHJPGCi3-dPXdE"
 app = ApplicationBuilder().token(bot_token).build()
 
 app.add_handler(CommandHandler("hello", hello))
