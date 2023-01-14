@@ -1,7 +1,7 @@
 from asyncio import constants
 
 
-path = 'logger.py'
+path = 'phonebook.txt'
 contacts = []
 
 def read_file():
@@ -24,5 +24,5 @@ def add_contact():
 
 def save_file():
     global contacts
-    with open(path, 'w', encoding='utf_8') as f:
+    with open(path, 'w', encoding='utf-8') as f:
         pass

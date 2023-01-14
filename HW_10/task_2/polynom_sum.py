@@ -1,4 +1,4 @@
-from import file_1
+ import re, intertools
 def convert_pol(pol):
 pol = pol.replace('=0', '')
 pol = pol.replace('= 0', '')

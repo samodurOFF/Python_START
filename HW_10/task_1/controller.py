@@ -1,6 +1,11 @@
 import view, model
+from telegram import Update
+from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+
+
 
 def start():
+
     while True:
         command = view.show_menu()
         match command:
@@ -14,3 +19,11 @@ def start():
                 model.add_contact()
             case '0':
                 break
+
+
+    bot_token = ""
+    app = ApplicationBuilder().token(bot_token).build()
+
+    app.add_handler(CommandHandler("start", hello))
+    app.add_handler(CommandHandler("start", viev.greetings))
+    app.run_polling()
