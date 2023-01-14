@@ -1,26 +1,27 @@
- import re, intertools
+import re, intertools
+
 def convert_pol(pol):
-pol = pol.replace('=0', '')
-pol = pol.replace('= 0', '')
-pol = re.sub("[*|^| ]", " ", pol).split('+')
-pol = [char.split(' ') for char in pol]
-pol = [[x for x in list if x] for list in pol]
-for i in pol:
-    if i[0] == 'x': i.insert(0, 1)
-    if i[-1] == 'x': i.append(1)
-    if len(i) == 1: i.append(0)
-pol = [tuple(int(x) for x in j if x != 'x') for j in pol]
-return pol
+    pol = pol.replace('=0', '')
+    pol = pol.replace('= 0', '')
+    pol = re.sub("[*|^| ]", " ", pol).split('+')
+    pol = [char.split(' ') for char in pol]
+    pol = [[x for x in list if x] for list in pol]
+    for i in pol:
+        if i[0] == 'x': i.insert(0, 1)
+        if i[-1] == 'x': i.append(1)
+        if len(i) == 1: i.append(0)
+    pol = [tuple(int(x) for x in j if x != 'x') for j in pol]
+    return pol
 
 # Получение списка кортежей суммы (<коэф1 + коэф2>, <степень>)
 
 def fold_pols(pol1, pol2):
-x = [0] * (max(pol1[0][1]+1, pol2[0][1] + 1))
-for i in pol1 + pol2:
-    x[i[1]] += i[0]
-res = [(x[i], i) for i in range(len(x)) if x[i] != 0]
-res.sort(key = lambda r: r[1], reverse = True)
-return res
+    x = [0] * (max(pol1[0][1]+1, pol2[0][1] + 1))
+    for i in pol1 + pol2:
+        x[i[1]] += i[0]
+    res = [(x[i], i) for i in range(len(x)) if x[i] != 0]
+    res.sort(key = lambda r: r[1], reverse = True)
+    return res
 
 # Составление итогового многочлена
 
@@ -42,5 +43,3 @@ def get_sum_pol(pol):
     return "".join(map(str, new_pol))
 
 
-#Vera: 9*x^5+7*x^4+7*x^3+9*x^2+6*x+17=0
-#3*x^2+2*x+1=0
