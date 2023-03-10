@@ -12,18 +12,27 @@
 #  5 10 15 20 25 30
 #  6 12 18 24 30 36
 
-def print_operation_table(operation, num_rows=6, num_columns=6):
-    # Выводим шапку таблицы с номерами столбцов
-    print(" ", end="")
-    for column in range(1, num_columns+1):
-        print(column, end=" ")
-    print()
-    # Выводим содержимое таблицы
-    for row in range(1, num_rows+1):
-        print(row, end=" ")
-        for column in range(1, num_columns+1):
-            print(operation(row, column), end=" ")
-        print()
+# def print_operation_table(operation, num_rows=6, num_columns=6):
+#     # Выводим шапку таблицы с номерами столбцов
+#     print(" ", end="")
+#     for column in range(1, num_columns+1):
+#         print(column, end=" ")
+#     print()
+#     # Выводим содержимое таблицы
+#     for row in range(1, num_rows+1):
+#         print(row, end=" ")
+#         for column in range(1, num_columns+1):
+#             print(operation(row, column), end=" ")
+#         print()
 
-# Пример использования функции с операцией умножения
+# # Пример использования функции с операцией умножения
+# print_operation_table(lambda x, y: x * y)
+
+def print_operation_table(operation, num_rows=6, num_columns=6):
+    for i in range(1, num_rows+1):
+        row = ""
+        for j in range(1, num_columns+1):
+            row += str(operation(i, j)) + " "
+        print(row)
+
 print_operation_table(lambda x, y: x * y)
