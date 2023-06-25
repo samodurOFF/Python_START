@@ -1,0 +1,57 @@
+"""
+Реализуйте код игры.
+Правила игры: на столе лежит N количество конфет. Играют два игрока, делая ход друг после друга.
+Первый ход определяется жеребьёвкой, то есть случаен. За один ход можно забрать не более чем n конфет.
+Не брать конфеты НЕЛЬЗЯ. Побеждает тот, кто сделал последний ход, то есть забрал со стола остатки конфет.
+Он забирает также все конфеты оппонента.
+Сколько конфет нужно взять первому игроку, чтобы забрать все конфеты у своего оппонента?
+
+a) Добавьте игру против бота
+b) Подумайте, как наделить бота простейшим "интеллектом"
+"""
+
+
+from random import randint
+
+
+def in_data(name):
+
+    total = int(input(f'{name}, how many candies will you take min = 1  max =  take_once}: '))
+    while total < 1 or total > take_once:
+        total = int(input(f'{name}, enter the correct number of candies: '))
+    return total
+
+
+def print_data(name, n, counter, value):
+    print(f' was a move {name}, take {n}, had {counter}. left on the table: {value}')
+
+
+player1 = input('Enter the name of the gamer 1: ')
+player2 = input('Enter the name of the gamer 2: ')
+value = int(input('enter the number of candies on the table: '))
+flag = randint(0, 1)
+if flag:
+    print(f'move {player1}')
+else:
+    print(f'move {player2}')
+
+counter1 = 0
+counter2 = 0 take = int(input('Enter the number of candies that can be taken in one turn: '))
+while value > take_once:
+    if flag:
+        n = in_data(player1)
+        counter1 += n
+        value -= n
+        flag = False
+        print_data(player 1, n, counter1, value)
+    else:
+        n = in_data(player2)
+        counter2 += n
+        value -= n
+        flag = True
+        print_data(player2, n, counter2, value)
+
+if flag:
+    print(f'All the candies have {player1}, victory!')
+else:
+    print(f'All the candies have {player2}, victory!')

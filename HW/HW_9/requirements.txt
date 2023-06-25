@@ -1,0 +1,9 @@
+anyio==3.6.2
+certifi==2022.12.7
+h11==0.14.0
+httpcore==0.16.3
+httpx==0.23.1
+idna==3.4
+python-telegram-bot==20.0b0
+rfc3986==1.5.0
+sniffio==1.3.0

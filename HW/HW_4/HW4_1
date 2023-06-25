@@ -1,0 +1,40 @@
+#"""
+#Выведите список простых множителей натурального числа N.
+
+#Ввод: значение типа <int>
+#Вывод: значение типа <list>
+
+#Примеры:
+#20
+#[2, 2, 5]
+
+#38
+#[2, 19]
+#"""
+
+
+
+n = int(input('Enter the number N: '))
+list = []
+a = n
+if n > 1:
+
+    restart = True
+    while restart:
+
+        restart = False
+        for i in range (2, n+1):
+            if n%i == 0:
+                list.append(i)
+                n = int(n/i)
+
+                restart = True
+                break
+
+    print(f'Prime factors of a number {a} - {list}')
+elif n == 1:
+
+    print(f'Prime factors of a number{a} - [1]')
+else:
+    
+    print(f'False')
